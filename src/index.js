@@ -2,6 +2,7 @@ import join from "lodash/join";
 
 import "./style.css";
 import CarImage from "./car.webp";
+import printMe from "./print";
 
 function components() {
   const element = document.createElement("h1");
@@ -14,7 +15,12 @@ function components() {
 
   // element.appendChild(img);
 
-  return [element, img];
+  const btn = document.createElement("button");
+  btn.textContent = "Click here and check the console";
+
+  btn.onclick = printMe;
+
+  return [element, img, btn];
 }
 const App = document.createElement("div");
 App.id = "app-root";
